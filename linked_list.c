@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/*Olamide's file */
 /*Struct for singly list*/
 typedef struct node
 {
