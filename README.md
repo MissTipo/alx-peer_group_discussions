@@ -32,4 +32,4 @@
 <li>Ibrahim Ibrahim</li>
 <li>Isaac Phiri</li>
 </ul>
-<p><strong>Yaay Team work<strong></p>
+<p><strong>Yaay Team work is the best<strong></p>
