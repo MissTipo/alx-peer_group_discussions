@@ -4,5 +4,6 @@
 <li>Kwabena Sapong</li>
 <li>Nathaniel Osei</li>
 <li>Falade Mutiu</li>
+<li>Dorine Tipo</li>
 </ul>
 <p><strong>Yaay Team work<strong></p>
