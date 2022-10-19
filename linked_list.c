@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+<<<<<<< HEAD
+/*Olamide's file */
+/*Struct for singly list*/
+=======
 
 /*Struct node for singly list*/
+>>>>>>> master
 typedef struct node
 {
     int data;
