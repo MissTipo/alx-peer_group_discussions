@@ -1,3 +1,3 @@
-README
-update by Olamide
-Team work
+# ALX PEER LEARNING REPO
+## Contributors : The Brainy Bunch!
+### Yaay Team work
