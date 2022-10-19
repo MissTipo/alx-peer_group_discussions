@@ -4,7 +4,6 @@
 <li>Kwabena Sapong</li>
 <li>Nathaniel Osei</li>
 <li>Falade Mutiu</li>
+<li>Ibrahim Ibrahim</li>
 </ul>
 ### Yaay Team work
-
-#### 007
