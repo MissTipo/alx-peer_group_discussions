@@ -5,4 +5,4 @@
 <li>Nathaniel Osei</li>
 <li>Falade Mutiu</li>
 </ul>
-### Yaay Team work
+<p><strong>Yaay Team work<strong></p>
