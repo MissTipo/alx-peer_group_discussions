@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+<<<<<<< HEAD
 /*Olamide's file */
 /*Struct for singly list*/
+=======
+
+/*Struct node for singly list*/
+>>>>>>> master
 typedef struct node
 {
     int data;
@@ -18,12 +23,6 @@ void insert_after_n(node *head, node *new_node, int n);
 void swap_after_n(node *head, int n);
 void delAtpos(node *head, int pos);
 int countList(node *head);
-/**
-* Todos
-* recap what was done before
-* next swap function and delete function
-* 
-*/
 
 /*creates a new node*/
 node *create_node(int data)
@@ -52,12 +51,12 @@ void append_to_list(node *head, node *new_node)
     {
         head = new_node;
     }
-           
+
     else{
             while (head->next)
             {
                 head = head->next;
-            }   
+            }
             head->next = new_node;
         }
 }
