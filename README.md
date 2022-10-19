@@ -3,5 +3,7 @@
 <ul>
 <li>Kwabena Sapong</li>
 <li>Nathaniel Osei</li>
+<li>Falade Mutiu</li>
+<li>Dorine Tipo</li>
 </ul>
-### Yaay Team work
+<p><strong>Yaay Team work<strong></p>
