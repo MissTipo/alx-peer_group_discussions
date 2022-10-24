@@ -21,6 +21,8 @@ class TestUnitest_Function(unittest.TestCase):
 
     def test_mul(self):
         self.assertEqual(mul(1, 1), 1)
+def test_mul(self):
+        self.assertEqual(mul(1, 1), 1)
         self.assertEqual(mul(-1, 1), -1)
         self.assertEqual(mul(-1, -1), 1)
         self.assertAlmostEqual(mul(-1.5, -1.4), 2.0999999999999996)
