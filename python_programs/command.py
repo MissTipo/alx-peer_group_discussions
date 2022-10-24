@@ -4,6 +4,7 @@ import cmd
 class Hellopeers(cmd.Cmd):
     '''command processor'''
     prompt = '(hbnd)'
+    peers = [ 'Olamide', 'Erick', 'Doreen', 'Rency', 'Mutio']
 
     '''print welcome with no arguments'''
     def do_greet(self,line):
@@ -29,6 +30,21 @@ class Hellopeers(cmd.Cmd):
     def help_welcome(self):
         print("print welcome with no arguments and also takes an argument")
 
+    def complete_greet(self, text, line, begidx, endidx):
+        if not text:
+            completion = self.peers[:]
+        else:
+            completion = [ f for f in self.peers if f.startswith(text)]
+            return completion
+
+    #def cmdloop(self, intro=None):
+        '''Repeatedly issues a propmt accepts input, and parse an initial prefix'''
+        #print('cmdloop', intro)
+        #return cmd.Cmd.cmdloop(self, intro)
+
+    def preloop(self):
+        print("preloop")
+
 
 if __name__ == '__main__':
-    Hellopeers().cmdloop()
+    Hellopeers().cmdloop('WELCOME')
