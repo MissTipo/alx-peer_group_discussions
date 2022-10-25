@@ -1,10 +1,27 @@
 #!/usr/bin/env python3
-import cmd
+from cmd import Cmd
+import uuid
+from datetime import datetime
 
-class Hellopeers(cmd.Cmd):
+class Hellopeers(Cmd):
     '''command processor'''
     prompt = '(hbnd)'
     peers = [ 'Olamide', 'Erick', 'Doreen', 'Rency', 'Mutio']
+
+    def do_uuid(self, line):
+        """Assignes random uuid"""
+        print(uuid.uuid4())
+
+    def do_date(self, line):
+        """Assignes date and time"""
+        today = (datetime.today())
+        today_format = today.strftime("%Y-%m-%dT%H-%M-%S.%f")
+        print(today_format)
+        print(today)
+
+
+        #today_format = today.strftime("%Y-%m-%d\nT%H-%M-%S.%f")
+        #print(today_format)
 
     '''print welcome with no arguments'''
     def do_greet(self,line):
@@ -42,8 +59,8 @@ class Hellopeers(cmd.Cmd):
         #print('cmdloop', intro)
         #return cmd.Cmd.cmdloop(self, intro)
 
-    def preloop(self):
-        print("preloop")
+#    def preloop(self):
+ #       print("preloop")
 
 
 if __name__ == '__main__':
