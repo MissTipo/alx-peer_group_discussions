@@ -13,6 +13,7 @@
 <li>git merge branch_name #pull request to add contributions made on branch_name to master branch</li>
 <li>git status #to check if master is updated</li>
 <li>git switch branch_name && git status #to check if branch is up to date with master</li>
+<li>git diff master branch_name #to compare your branch with the master branch</li>
 </ol>
 <p>---------------------------------------------------------------------------------------------------------</p>
 
@@ -31,5 +32,6 @@
 <li>Dorine Tipo</li>
 <li>Ibrahim Ibrahim</li>
 <li>Isaac Phiri</li>
+<li>Adewole Conde</li>
 </ul>
 <p><strong>Yaay Team work is the best<strong></p>
