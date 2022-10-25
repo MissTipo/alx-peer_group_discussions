@@ -1,0 +1,15 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "git.ignoreMissingGitWarning": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "python.defaultInterpreterPath": "C:\\Users\\e1070\\AppData\\Local\\Microsoft\\WindowsApps\\python3.10.exe",
+    "security.workspace.trust.untrustedFiles": "open",
+    "tabnine.experimentalAutoImports": true,
+    "workbench.editor.untitled.hint": "hidden",
+    "editor.codeActionsOnSave": {
+    
+    }
+}
