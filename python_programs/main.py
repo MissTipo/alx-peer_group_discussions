@@ -28,4 +28,4 @@ if __name__ == "__main__":
     print()
     #print(person1.load_json_from_file("my_file.json"))
     #json_format = person1.to_json_string()
-    person1.save_json_to_file("Mutio.json")
+    person1.save_json_to_file("Mutiu.json")
