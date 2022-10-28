@@ -2,7 +2,8 @@
 import uuid
 from datetime import datetime
 import json
-from models import storage
+#from models import storage
+import models
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
@@ -17,14 +18,15 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            storage.new(self)
+            models.storage.new(self)#made change added path(models)
 
     def __str__(self):
         return f"[{self.__class__.__name__}], ({self.id}), ({self.__dict__})"
 
     def save(self):
         self.updated_at = datetime.now()
-        storage.new(self)
+        #models.storage.new(self) #made change, new is supposed to be save
+        models.storage.save()
 
     def to_dict(self):
         my_dict = self.__dict__.copy()
@@ -32,7 +34,7 @@ class BaseModel:
         my_dict["created_at"] = self.created_at.isoformat()
         my_dict["updated_at"] = self.updated_at.isoformat()
         return my_dict
-
+    """
     def save_json_to_file(self, filename):
         with open(filename, "w", encoding="utf8") as o:
             json.dump(self.to_dict(), o)
@@ -40,7 +42,7 @@ class BaseModel:
     def load_json_from_file(filename):
         with open(filename, "r", encoding="utf8") as o:
             return json.load(o)
-
+        """
 """
 my_model = BaseModel()
 my_model.name = "My First Model"
