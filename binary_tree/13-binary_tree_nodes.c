@@ -1,20 +1,44 @@
 #include "binary_trees.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 
-
-size_t binary_tree_leaves(const binary_tree_t *tree)
+size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-	if (tree == NULL)
-                return (0);
-        size_t l_leaf = 0, r_leaf = 0;
+	size_t nodes = 0;
+	
+	if (tree)
+	{
 
-        if ((tree->left == NULL) && (tree->right == NULL))
+
+
+		nodes += (tree->left || tree->right) ? 1: 0;
+		nodes += binary_tree_nodes(tree->left);
+		nodes += binary_tree_nodes(tree->right);
+	}
+	return (nodes);
+
+
+	/*size_t l_no_node = 0, r_no_node = 0, total_no_node = 0;
+
+        if (!tree)
+                return (0);
+        if ((tree->left || tree->right) && tree->parent)
                 return (1);
-        l_leaf = binary_tree_leaves(tree->left);
-        r_leaf = binary_tree_leaves(tree->right);
-        return (l_leaf + r_leaf);
+        if (tree->left || tree->right)
+        {
+                l_no_node = binary_tree_nodes(tree->left) + 1;
+                r_no_node = binary_tree_nodes(tree->right);
+                total_no_node = l_no_node + r_no_node;
+                return (total_no_node);
+        }
+        return (total_no_node);*/
+
+		
+		/*if ((tree->left) || (tree->right))
+			return (1);
+		l_node = binary_tree_nodes(tree->left);
+		r_node = binary_tree_nodes(tree->right);
+		return (l_node + r_node); */
+
 }
 /**
 size_t binary_tree_leaves(const binary_tree_t *tree)
