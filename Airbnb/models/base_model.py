@@ -1,57 +1,63 @@
-#!/usr/bin/env python3
-from uuid import uuid4
-import json
+#!/usr/bin/python3
+"""This module defines a base class for all models in our hbnb clone"""
+import uuid
+import sqlalchemy
 from datetime import datetime
-from __init__ import storage
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, String, DateTime
 
+Base = declarative_base()
 
 class BaseModel:
+    id = Column(String, primary_key=True, nullable=False)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
+    updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
+
+    """A base class for all hbnb models"""
     def __init__(self, *args, **kwargs):
-        if kwargs:
-            for key, value in kwargs.items():
-                if key == "created_at" or key == "updated_at":
-                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-                if key == "__class__":
-                    continue
-                setattr(self, key, value)
+        """Instatntiates a new model"""
+        if not kwargs:
+            from models import storage
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            #storage.new(self)
         else:
-            self.id = str(uuid4())
-            self.created_at = datetime.today()
-            self.updated_at = datetime.today()
-            storage.new(self)
+            kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
+                                                     '%Y-%m-%dT%H:%M:%S.%f')
+            kwargs['created_at'] = datetime.strptime(kwargs['created_at'],
+                                                     '%Y-%m-%dT%H:%M:%S.%f')
+            del kwargs['__class__']
+            self.__dict__.update(kwargs)
+
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
 
     def __str__(self):
-        return f"[{self.__class__.__name__}] ({self.id}) ({self.__dict__})"
+        """Returns a string representation of the instance"""
+        cls = (str(type(self)).split('.')[-1]).split('\'')[0]
+        return '[{}] ({}) {}'.format(cls, self.id, self.__dict__)
 
     def save(self):
-        """Updates 'updated_at' current datetime"""
-        self.updated_at = datetime.today()
+        """Updates updated_at with current time when instance is changed"""
+        from models import storage
+        self.updated_at = datetime.now()
+        storage.new(self)
         storage.save()
 
     def to_dict(self):
-        """Returns dictionary containing all keys/values"""
-        new_dict = self.__dict__.copy()
-        new_dict["__class__"] = self.__class__.__name__
-        new_dict["created_at"] = self.created_at.isoformat()
-        new_dict["updated_at"] = self.updated_at.isoformat()
-        return new_dict
+        """Convert instance into dict format"""
+        dictionary = {}
+        dictionary.update(self.__dict__)
+        dictionary.update({'__class__':
+                          (str(type(self)).split('.')[-1]).split('\'')[0]})
+        dictionary['created_at'] = self.created_at.isoformat()
+        dictionary['updated_at'] = self.updated_at.isoformat()
+        if '_sa_instance_state' in dictionary.keys():
+            del dictionary["_sa_instance_state"]
+        return dictionary
 
-    def save_json_to_file(self, filename):
-        '''Saves instance of BaseModel to a file'''
-        with open(filename, "w", encoding="utf-8") as f:
-            json.dump(self.to_dict(), f)
-
-    def save_json_to_file2(self, filename):
-        '''Saves instance of BaseModel to a file'''
-        with open(filename, "w", encoding="utf-8") as f:
-            f.write(str(self.to_dict()))
-
-    def load_json_from_file2(filename):
-        '''loads an instance of BaseModel from a file'''
-        with open(filename, "r", encoding="utf-8") as f:
-            return f.read()
-
-    def load_json_from_file(filename):
-        '''loads an instance of BaseModel from a file'''
-        with open(filename, "r", encoding="utf-8") as f:
-            return json.load(f)
+    def delete(self):
+        """Delete the current instance from the storage"""
+        storage.delete()
