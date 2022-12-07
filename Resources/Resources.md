@@ -63,7 +63,7 @@
 * [Python MySQL Documentation](https://www.mikusa.com/python-mysql-docs/index.html)
 
 * [Object Relational Tutorial](https://docs.sqlalchemy.org/en/13/orm/tutorial.html)
-
+* [https://www.youtube.com/watch?v=ORcvSkgdA58](How Secure Shell Works (SSH) - Com
 * [Introduction to SQLAlchemy](https://www.youtube.com/watch?v=woKYyhLCcnU)
 
 * [Flask SQLAlchemy](https://www.youtube.com/playlist?list=PLXmMXHVSvS-BlLA5beNJojJLlpE0PJgCW)
@@ -71,3 +71,15 @@
 * [SQLAlchemy](https://www.pythonsheets.com/notes/python-sqlalchemy.html)
 
 * [SQLAlchemy ORM Tutorial for Python Developers](https://auth0.com/blog/sqlalchemy-orm-tutorial-for-python-developers/)
+
+## SSH
+
+* [https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys](SSH Essentials: Working with SSH Servers, Clients, and Keys)
+* [https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process](Understanding the SSH Encryption and Connection Process)
+* [https://en.wikipedia.org/wiki/Secure_Shell](https://en.wikipedia.org/wiki/Secure_Shell)
+* [https://www.ssh.com/academy/ssh/public-key-authentication)(What is SSH Public Key Authentication?)
+* [https://www.ssh.com/academy/ssh/config](SSH config file for OpenSSH client)
+* [https://www.youtube.com/watch?v=ORcvSkgdA58](How Secure Shell Works (SSH) - Computerphile)
+* [https://www.youtube.com/watch?v=hQWRp-FdTpc](SSH Crash Course | With Some DevOps)
+* [https://en.wikipedia.org/wiki/Internet_Engineering_Task_Force](Internet Engineering Task Force)
+* [https://en.wikipedia.org/wiki/Request_for_Comments](Request for Comments)
