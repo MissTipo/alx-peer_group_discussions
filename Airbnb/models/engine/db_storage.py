@@ -44,15 +44,17 @@ class DBStorage():
         if not cls:
             from models.state import State
             from models.city import City
-            #res_list = self.__session.query(Amenity)
-            #res_list.extend(self.__session.query(City))
-            #res_list.extend(self.__session.query(Place))
-            #res_list.extend(self.__session.query(Review))
+
             res_list = (self.__session.query(State)).all()
-            #res_list.extend(self.__session.query(User))
+            res_list.extend(self.__session.query(Amenity))
+            res_list.extend(self.__session.query(City))
+            res_list.extend(self.__session.query(Place))
+            res_list.extend(self.__session.query(Review))
+            res_list.extend(self.__session.query(City))
         else:
             res_list = self.__session.query(cls).all()
         if res_list:
+            #print(res_list)
             return {'{}.{}'.format(type(obj).__name__, obj.id): obj
                     for obj in res_list}
         else:
