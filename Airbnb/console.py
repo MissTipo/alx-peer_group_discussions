@@ -148,6 +148,7 @@ class HBNBCommand(cmd.Cmd):
                 p1 = int(param_list[1])
             setattr(new_instance, param_list[0], p1)
 
+
                 #if ('"' in p):
                     #p1 = p.replace('"', '\')
 
@@ -166,8 +167,8 @@ class HBNBCommand(cmd.Cmd):
         setattr(new_instance, arg_list[0], arg_list[1])
         #i += 1
         """
-
-        storage.save()
+        storage.new(new_instance)
+        #storage.save()
         print(new_instance.id)
         storage.save()
 
@@ -249,12 +250,10 @@ class HBNBCommand(cmd.Cmd):
         if args:
             args = args.split(' ')[0]  # remove possible trailing args
             if args not in HBNBCommand.classes:
-                print("** class doesn't exist **")
                 return
             #for k, v in storage._FileStorage__objects.items():
             print("BEfore the for")
             for k, v in storage.all().items():
-                print("after the for")
                 if k.split('.')[0] == args:
                     print_list.append(str(v))
         else:
