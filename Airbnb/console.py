@@ -131,6 +131,7 @@ class HBNBCommand(cmd.Cmd):
         new_instance = HBNBCommand.classes[class_args]()
 
         #print(args[2])
+        kw_args = {}
         d = len(args)
         for j in range(1, d):
             #argd[j] = name="california"
@@ -146,7 +147,17 @@ class HBNBCommand(cmd.Cmd):
                 #setattr(new_instance, param_list[0], p)
             else:
                 p1 = int(param_list[1])
+            #kw_args[param_list[0]] = p1
+
             setattr(new_instance, param_list[0], p1)
+
+        #if (kw_args):
+         #   new_instance = HBNBCommand.classes[class_args](kw_args)
+        #else:
+         #   new_instance = HBNBCommand.classes[class_args]()
+
+            #if '_sa_instance_state' in new_instance.__dict__.keys():
+             #   del new_instance.__dict__["_sa_instance_state"]
 
 
                 #if ('"' in p):
@@ -155,18 +166,6 @@ class HBNBCommand(cmd.Cmd):
             #print(param_list)
             #setattr(new_instance, param_list[0], param_list[1])
 
-
-        """
-        #i = 1
-        print(args[1])
-
-        #while(args[i]):
-        arg_list = args[1].split("=") #list of key_value param
-        arg_list[1] = arg_list[1].replace('"', "")
-        print(arg_list)
-        setattr(new_instance, arg_list[0], arg_list[1])
-        #i += 1
-        """
         storage.new(new_instance)
         #storage.save()
         print(new_instance.id)
@@ -252,10 +251,17 @@ class HBNBCommand(cmd.Cmd):
             if args not in HBNBCommand.classes:
                 return
             #for k, v in storage._FileStorage__objects.items():
-            print("BEfore the for")
+            #print("BEfore the for")
             for k, v in storage.all().items():
                 if k.split('.')[0] == args:
+                    #if '_sa_instance_state' in v.keys():
+                        #del v["_sa_instance_state"]
+                    #print()
+                    #print(v)
+                    #print()
                     print_list.append(str(v))
+
+
         else:
             #for k, v in storage._FileStorage__objects.items():
             for k, v in storage.all().items():
