@@ -9,8 +9,8 @@ from models.city import City
 
 from models.user import User
 from models.place import Place
-from models.amenity import Amenity
-from models.review import Review
+#from models.amenity import Amenity
+#from models.review import Review
 
 
 class DBStorage():
@@ -36,29 +36,29 @@ class DBStorage():
             # drop = session.
 
     def all(self, cls=None):
-        """query on the current database session (self.__session)
-            all objects depending of the class name (argument cls)
-        """
+        """ Query on the current database session all objects """
 
-        """ Queries a database for objects """
-        if not cls:
-            from models.state import State
-            from models.city import City
+        objDict = {}
+        if cls is None:
+            classes = {'State': State, 'City': City, 'User': User, 'Place': Place}
+            for key, value in classes.items():
+                # print("Here")
+                objct = self.__session.query(value).all()
+                for obj in objct:
+                    key = "{}.{}".format(type(obj).__name__, obj.id)
+                    # print(key)
+                    objDict[key] = obj
+        else:
+            if type(cls) == str:
+                cls = eval(cls)
+            objct = self.__session.query(cls)
+            for obj in objct:
+                key = "{}.{}".format(type(obj).__name__, obj.id)
+                objDict[key] = obj
 
-            res_list = (self.__session.query(State)).all()
-            res_list.extend(self.__session.query(Amenity))
-            res_list.extend(self.__session.query(City))
-            res_list.extend(self.__session.query(Place))
-            res_list.extend(self.__session.query(Review))
-            res_list.extend(self.__session.query(City))
-        else:
-            res_list = self.__session.query(cls).all()
-        if res_list:
-            #print(res_list)
-            return {'{}.{}'.format(type(obj).__name__, obj.id): obj
-                    for obj in res_list}
-        else:
-            print("Welcome")
+        # print(objDict)
+        return objDict
+
         """
         from model.state import State
         objects = ['User', 'State', 'City', 'Amenity', 'Place', 'Review']
