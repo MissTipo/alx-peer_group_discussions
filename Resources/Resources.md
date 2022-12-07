@@ -74,12 +74,12 @@
 
 ## SSH
 
-* [https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys](SSH Essentials: Working with SSH Servers, Clients, and Keys)
-* [https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process](Understanding the SSH Encryption and Connection Process)
-* [https://en.wikipedia.org/wiki/Secure_Shell](https://en.wikipedia.org/wiki/Secure_Shell)
-* [https://www.ssh.com/academy/ssh/public-key-authentication)(What is SSH Public Key Authentication?)
-* [https://www.ssh.com/academy/ssh/config](SSH config file for OpenSSH client)
-* [https://www.youtube.com/watch?v=ORcvSkgdA58](How Secure Shell Works (SSH) - Computerphile)
-* [https://www.youtube.com/watch?v=hQWRp-FdTpc](SSH Crash Course | With Some DevOps)
-* [https://en.wikipedia.org/wiki/Internet_Engineering_Task_Force](Internet Engineering Task Force)
-* [https://en.wikipedia.org/wiki/Request_for_Comments](Request for Comments)
+* [SSH Essentials: Working with SSH Servers, Clients, and Key](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-se)
+* [Understanding the SSH Encryption and Connection Process](https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process)
+* [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell)
+* [What is SSH Public Key Authen    tication?](https://www.ssh.com/academy/ssh/public-key-authentication)
+* [SSH config file for OpenSSH client](https://www.ssh.com/academy/ssh/config)
+* [How Secure Shell Works (SSH) - Computerphile](https://www.youtube.com/watch?v=ORcvSkgdA58)
+* [SSH Crash Course | With Some DevOps](https://www.youtube.com/watch?v=hQWRp-FdTpc)
+* [Internet Engineering Task Force](https://en.wikipedia.org/wiki/Internet_Engineering_Task_Force)
+* [Request for Comments](https://en.wikipedia.org/wiki/Request_for_Comments)
