@@ -9,8 +9,8 @@ from models.city import City
 
 from models.user import User
 from models.place import Place
-#from models.amenity import Amenity
-#from models.review import Review
+from models.amenity import Amenity
+from models.review import Review
 
 
 class DBStorage():
@@ -40,7 +40,7 @@ class DBStorage():
 
         objDict = {}
         if cls is None:
-            classes = {'State': State, 'City': City, 'User': User, 'Place': Place}
+            classes = {'State': State, 'City': City, 'User': User, 'Place': Place, 'Review': Review, 'Amenity': Amenity}
             for key, value in classes.items():
                 # print("Here")
                 objct = self.__session.query(value).all()
