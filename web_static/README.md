@@ -1,1 +1,0 @@
-# Airbnb Web Static Project
