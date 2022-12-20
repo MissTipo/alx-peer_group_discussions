@@ -1,0 +1,10 @@
+myusername/dev-box
+uXmq@5X#m@Lz4Bx
+
+vagrant_default_1666168867511_51958
+ubuntu_focal64.box
+
+https://pypi.org/project/autopep8/
+https://medium.com/featurepreneur/json-crud-operation-in-python-2f7f1b32195
+
+C:\Users\e1070\.vagrant.d\boxes\ubuntu-VAGRANTSLASH-focal64\20220920.0.0\virtualbox
