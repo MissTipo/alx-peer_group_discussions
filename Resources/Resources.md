@@ -83,4 +83,14 @@
 * [SSH Crash Course | With Some DevOps](https://www.youtube.com/watch?v=hQWRp-FdTpc)
 * [Internet Engineering Task Force](https://en.wikipedia.org/wiki/Internet_Engineering_Task_Force)
 * [Request for Comments](https://en.wikipedia.org/wiki/Request_for_Comments)
+
+## Deploy Static
+
+* [How To Use Fabric To Automate Administration Tasks And Deployments](https://www.digitalocean.com/community/tutorials/how-to-use-fabric-to-automate-administration-tasks-and-deployments)
+* [How to use Fabric in Python](https://www.pythonforbeginners.com/systems-programming/how-to-use-fabric-in-python)
+* [fab options and arguments](https://docs.fabfile.org/en/1.13/usage/fab.html#command-line-options)
+* [Welcome to Fabric!](https://www.fabfile.org/)
+* [Beginner’s Guide to Nginx](http://nginx.org/en/docs/beginners_guide.html)
+## End of file
+
 ## End of file
