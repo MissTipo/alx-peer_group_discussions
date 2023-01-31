@@ -59,6 +59,7 @@ class DBStorage:
         """commit all changes of the current database session"""
         self.__session.commit()
 
+<<<<<<< HEAD
     def get(self, cls, id):
         """Returns the object based on the class and its ID,
         or None if not found"""
@@ -76,11 +77,16 @@ class DBStorage:
             return len(obj)
         return len(models.storage.all())
 
+=======
+>>>>>>> f0ec5c7a295574da0df2f264d1ac8b5115aabd23
     def delete(self, obj=None):
         """delete from the current database session obj if not None"""
         if obj is not None:
             self.__session.delete(obj)
+<<<<<<< HEAD
             self.save()
+=======
+>>>>>>> f0ec5c7a295574da0df2f264d1ac8b5115aabd23
 
     def reload(self):
         """reloads data from the database"""

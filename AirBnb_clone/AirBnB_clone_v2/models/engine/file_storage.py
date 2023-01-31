@@ -4,7 +4,10 @@ Contains the FileStorage class
 """
 
 import json
+<<<<<<< HEAD
 import models
+=======
+>>>>>>> f0ec5c7a295574da0df2f264d1ac8b5115aabd23
 from models.amenity import Amenity
 from models.base_model import BaseModel
 from models.city import City
@@ -56,6 +59,7 @@ class FileStorage:
                 jo = json.load(f)
             for key in jo:
                 self.__objects[key] = classes[jo[key]["__class__"]](**jo[key])
+<<<<<<< HEAD
         except BaseException:
             pass
 
@@ -76,6 +80,11 @@ class FileStorage:
             return len(obj)
         return len(models.storage.all())
 
+=======
+        except:
+            pass
+
+>>>>>>> f0ec5c7a295574da0df2f264d1ac8b5115aabd23
     def delete(self, obj=None):
         """delete obj from __objects if it’s inside"""
         if obj is not None:
