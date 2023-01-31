@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+!/usr/bin/python3
 """Returns first 10 hot posts for a given subreddit"""
 
 import requests
@@ -16,6 +16,6 @@ def top_ten(subreddit):
     res = requests.get("{}/r/{}/hot".format(BASE_URL, subreddit),
                        headers=headers, params=params)
     if res.status_code == 404:
-        return None
+        return print(None)
     children = res.json().get('data').get('children')
     print("\n".join([child.get('data').get('title') for child in children]))

@@ -22,7 +22,7 @@ def recurse(subreddit, hot_list=[], after="", count=0):
     count += data.get('dist')
     if after is not None:
         recurse(subreddit, hot_list, after, count)
-    children = res.json().get('data').get('children')
+    children = data.get('children')
     for child in children:
         hot_list.append(child.get('data').get('title'))
 
