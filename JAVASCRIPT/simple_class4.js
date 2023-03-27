@@ -39,9 +39,9 @@ class Goat extends Animal {
   }
 }
 
-const dog = new Dog("Rex");
-const cat = new Cat("Fluffy");
-const goat = new Goat("Billy");
+const dog = new Dog('Rex');
+const cat = new Cat('Fluffy');
+const goat = new Goat('Billy');
 
 dog.speak(); // "Rex barks."
 cat.speak(); // "Fluffy meows."
