@@ -1,38 +1,40 @@
-Tic-tac-toe game: Create a tic-tac-toe game that allows users to play against the computer. Use ES6 classes to define the game board and move objects, and use Promises to handle API requests for game data. Use ES6 data manipulation techniques to check for winning moves and keep track of the game state.
+# Tic-tac-toe game project using ES6 Basics, Promises, Classes, and Data Manipulation
 
-General structure for the Tic-tac-toe game project using ES6 Basics, Promises, Classes, and Data Manipulation:
+## Project Overview
 
-Set up the game board
-Create a class for the game board that initializes a 3x3 grid with empty squares
-Render the game board on the page
-Create game logic
-Create a class for the game itself that manages the state of the game (e.g. whose turn it is, if the game is over, etc.)
-Use ES6 data manipulation techniques to check for winning moves and update the game state accordingly
-Allow users to play against the computer
-Add an event listener to the game board that allows users to make a move
-Use Promises to handle API requests for game data (e.g. determining the computer's move)
-Create a class for the computer that generates a move based on the current game state
-Display game results
-Display a message when the game is over (e.g. "You won!", "Computer won!", or "It's a tie!")
-Overall, the structure should involve creating classes for the game board, the game logic, and the computer. Promises can be used to handle API requests for game data, and ES6 data manipulation techniques can be used to check for winning moves and update the game state. The game should allow users to play against the computer and display the game results.
+This project involves creating a Tic-tac-toe game using ES6 Basics, Promises, Classes, and Data Manipulation. The game will allow users to play against the computer and use ES6 data manipulation techniques to check for winning moves and keep track of the game state.
 
+## Project Structure
 
-Sure! Here is a more detailed breakdown of each step in the Tic-tac-toe game project using ES6 Basics, Promises, Classes, and Data Manipulation:
+1. Set up the game board:
+- Create a class called `GameBoard` that initializes a 3x3 grid with empty squares.
+- Use the class constructor to create an array of arrays representing the game board, where each inner array represents a row.
+- Render the game board on the page using HTML and CSS.
 
-Set up the game board:
-Create a class called GameBoard that initializes a 3x3 grid with empty squares.
-Use the class constructor to create an array of arrays representing the game board, where each inner array represents a row.
-Render the game board on the page using HTML and CSS.
-Create game logic:
-Create a class called Game that manages the state of the game, including whose turn it is and if the game is over.
-Use ES6 data manipulation techniques to check for winning moves, such as using a nested loop to check for three in a row.
-Add methods to the Game class to handle user moves and computer moves.
-Use the Game class to update the game state and determine if the game is over.
-Allow users to play against the computer:
-Add an event listener to the game board that allows users to make a move.
-Use Promises to handle API requests for game data, such as determining the computer's move.
-Create a class called Computer that generates a move based on the current game state, such as choosing a random empty square.
-Display game results:
-Display a message when the game is over, such as "You won!", "Computer won!", or "It's a tie!".
-Use the Game class to determine the game result and display the appropriate message.
-Overall, the structure of the Tic-tac-toe game project using ES6 Basics, Promises, Classes, and Data Manipulation involves creating classes for the game board, game logic, and computer, using Promises to handle API requests, and using ES6 data manipulation techniques to check for winning moves and update the game state. The game should allow users to play against the computer and display the game results.
+2. Create game logic:
+- Create a class called `Game` that manages the state of the game, including whose turn it is and if the game is over.
+- Use ES6 data manipulation techniques to check for winning moves, such as using a nested loop to check for three in a row.
+- Add methods to the `Game` class to handle user moves and computer moves.
+- Use the `Game` class to update the game state and determine if the game is over.
+
+3. Allow users to play against the computer:
+- Add an event listener to the game board that allows users to make a move.
+- Use Promises to handle API requests for game data, such as determining the computer's move.
+- Create a class called `Computer` that generates a move based on the current game state, such as choosing a random empty square.
+
+4. Display game results:
+- Display a message when the game is over, such as "You won!", "Computer won!", or "It's a tie!".
+- Use the `Game` class to determine the game result and display the appropriate message.
+
+## How to Play Tic-tac-toe
+
+Tic-tac-toe is a two-player game where each player takes turns placing either an X or an O on a 3x3 grid. The goal is to get three in a row (horizontally, vertically, or diagonally) before the other player does. The game ends in a tie if all nine squares are filled without a winner.
+
+To play Tic-tac-toe:
+1. Draw a 3x3 grid on a piece of paper or use a digital version of the game board.
+2. Decide which player will be X and which will be O.
+3. The player with X goes first and places an X on any empty square on the grid.
+4. The player with O goes next and places an O on any empty square on the grid.
+5. Players continue taking turns until either one player gets three in a row or all nine squares are filled.
+6. If a player gets three in a row, they win the game.
+7. If all nine squares are filled without a winner, the game ends in a tie.
