@@ -77,43 +77,6 @@ def searchMatrix(matrix: list[list[int]], target: int) -> bool:
     return False
 
 
-'''
-def b_search(arr, target, start, end):  # [1,2,3,4,5,6,7,8,9] target = 2
-    if start < end:
-        mid = (end + start) // 2    # mid = 4:
-        if arr[mid] == target:
-            return True
-        if target < arr[mid]:  # if 2 < 5
-            end = mid - 1
-            return b_search(arr, target, start, end)
-
-        else:
-            start = mid + 1
-            return b_search(arr, target, start, end)
-    return False
-'''
-
-
-'''
-def binarySearch(a, n, m, k, x):    #x is the row number
-     
-    # x
-    l = 0
-    r = m - 1
-    mid = 0
-    while (l <= r):
-        mid = int((l + r) / 2)
-         
-        if (a[x][mid] == k):
-            print("Found at (" , x , ",", mid , ")", sep = "")
-            return
-        if (a[x][mid] > k):
-            r = mid - 1
-        if (a[x][mid] < k):
-            l = mid + 1
-'''
-
-
 def binary_search(arr, target):
     left, right = 0, len(arr) - 1
 
@@ -130,7 +93,6 @@ def binary_search(arr, target):
     return False  # Target is not in the array
 
 
-# Testing123...
 matrix = [[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 60]]
 target = 13
 
@@ -138,10 +100,5 @@ print('Testing123')
 print(searchMatrix(matrix, target))
 
 
-# arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-# target = 11
-# end = len(arr)
-
 # for i in range(10):
 # print(binary_search(arr, i))
-# print(b_search(arr, i, 0, end))
