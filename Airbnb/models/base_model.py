@@ -1,74 +1,72 @@
-#!/usr/bin/python3
-"""This module defines a base class for all models in our hbnb clone"""
-import uuid
-import sqlalchemy
 from datetime import datetime
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, String, DateTime
+from uuid import uuid4
+from models.engine.file_storage import FileStorage
+from models import storage
 
-Base = declarative_base()
 
-class BaseModel:
-    id = Column(String(60), primary_key=True, nullable=False)
-    created_at = Column(DateTime, nullable=False, default=datetime.utcnow())
-    updated_at = Column(DateTime, nullable=False, default=datetime.utcnow())
-
-    """A base class for all hbnb models"""
+class BaseModel(object):
+    '''BaseModel Class'''
+   
     def __init__(self, *args, **kwargs):
-        """Instatntiates a new model"""
+        '''
+        Intialize public instance attributes:
+        Args
+                id: uuid.uuid4() # to generate unique id but don’t forget to convert to a string
+
+                created_at: datetime - assign with the current datetime when an instance is created
+
+                updated_at: datetime - assign with the current datetime when an instance is created 
+                            and it 	will be updated every time you change your object
+        '''
         if not kwargs:
-            from models import storage
-            self.id = str(uuid.uuid4())
+            self.id = str(uuid4())
+            # datetime.datetime(2017, 9, 28, 21, 5, 54, 119427)
             self.created_at = datetime.now()
+            # datetime.datetime(2017, 9, 28, 21, 5, 54, 119434) (add++)
             self.updated_at = datetime.now()
-            #storage.new(self)
+            storage.new(self)
         else:
-            for k, v in kwargs.items():
-                if (k == 'updated_at'):
-                    kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
-                                                     '%Y-%m-%dT%H:%M:%S.%f')
-                if (k == 'created_at'):
-                    kwargs['created_at'] = datetime.strptime(kwargs['created_at'],
-                                                     '%Y-%m-%dT%H:%M:%S.%f')
-                if (k == '__class__'):
-                    del kwargs['__class__']
-            if 'id' not in kwargs.keys():
-                self.id = str(uuid.uuid4())
-            self.__dict__.update(kwargs)
-
-
             for key, value in kwargs.items():
-                setattr(self, key, value)
-
+                if key != "__class__":
+                    if key in ('created_at', 'updated_at'):
+                        setattr(self, key, datetime.fromisoformat(str(value)))
+                    else:
+                        setattr(self, key, value)             
 
     def __str__(self):
-        """Returns a string representation of the instance"""
-        cls = (str(type(self)).split('.')[-1]).split('\'')[0]
-        new_dict = self.__dict__.copy()
-
-        if '_sa_instance_state' in new_dict.keys():
-            del new_dict["_sa_instance_state"]
-        return '[{}] ({}) {}'.format(cls, self.id, new_dict)
-
+        '''
+	    __str__: should print: [<class name>] (<self.id>) <self.__dict__>
+        '''
+        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+    
+    '''
+	Public instance methods:
+    '''
     def save(self):
-        """Updates updated_at with current time when instance is changed"""
-        from models import storage
+        '''
+        save(self): updates the public instance attribute updated_at with the current 
+        datetime
+        '''
         self.updated_at = datetime.now()
-        storage.new(self)
         storage.save()
-
+		
     def to_dict(self):
-        """Convert instance into dict format"""
-        dictionary = {}
-        dictionary.update(self.__dict__)
-        dictionary.update({'__class__':
-                          (str(type(self)).split('.')[-1]).split('\'')[0]})
-        dictionary['created_at'] = self.created_at.isoformat()
-        dictionary['updated_at'] = self.updated_at.isoformat()
-        if '_sa_instance_state' in dictionary.keys():
-            del dictionary["_sa_instance_state"]
-        return dictionary
+        '''
+		to_dict(self): returns a dictionary containing all keys/values of __dict__ of the 			
+        instance:
 
-    def delete(self):
-        """Delete the current instance from the storage"""
-        storage.delete()
+			by using self.__dict__, only instance attributes set will be returned
+
+			a key __class__ must be added to this dictionary with the class name of the 			
+            object
+
+			created_at and updated_at must be converted to string object in ISO format:
+			format: %Y-%m-%dT%H:%M:%S.%f (ex: 2017-06-14T22:31:03.285259)
+
+			you can use isoformat() of datetime object
+            '''
+        new_dict = self.__dict__.copy()
+        new_dict["__class__"] = self.__class__.__name__
+        new_dict["created_at"] = self.created_at.isoformat()
+        new_dict["updated_at"] = self.updated_at.isoformat()             
+        return new_dict
