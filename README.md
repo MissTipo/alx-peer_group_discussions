@@ -1,4 +1,3 @@
-olamide
 <h1>ALX PEER LEARNING REPO</h1>
 
 <h2>Guidelines for Adding files / Modifying files in alx-peer_group_discussions repo</h2>
@@ -18,12 +17,12 @@ olamide
 </ol>
 <p>---------------------------------------------------------------------------------------------------------</p>
 
-###Note
-->A pull request – also referred to as a merge request – is an event that takes place in software development when a contributor/developer is ready to begin the process of merging new code changes with the main project repository.
+### Note
+-> A pull request – also referred to as a merge request – is an event that takes place in software development when a contributor/developer is ready to begin the process of merging new code changes with the main project repository.
 
-->A project’s repository (or “repo”) is where all the project code, product knowledge, metadata, and much more data/information is stored.
+-> A project’s repository (or “repo”) is where all the project code, product knowledge, metadata, and much more data/information is stored.
 
-->A repository maintainer/manager is someone on a DevOps or operations team who is responsible for maintaining said repository.
+-> A repository maintainer/manager is someone on a DevOps or operations team who is responsible for maintaining said repository.
 
 <h2>Contributors : The Brainy Bunch!</h2>
 <ul>
